@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 
 module.exports = {
-  up: async (queryInterface) => {
+  up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable("teams", 
     {
       id: {
