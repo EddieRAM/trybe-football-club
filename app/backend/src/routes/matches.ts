@@ -1,9 +1,15 @@
 import { Router } from 'express';
 
-import ControllerMatches from '../controllers/matchesController';
+import matchesController from '../controllers/matchesController';
 
 const matchesRouter = Router();
 
-matchesRouter.get('/', ControllerMatches.getAll);
+matchesRouter.get('/', matchesController.getAll);
+
+matchesRouter.post('/', matchesController.create);
+
+matchesRouter.patch('/:id', matchesController.update);
+
+matchesRouter.patch('/:id/finish', matchesController.modify);
 
 export default matchesRouter;
